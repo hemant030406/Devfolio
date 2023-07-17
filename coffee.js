@@ -121,9 +121,7 @@ function hidedetails9(){
 }
 
 function confirmAdding(){
-    if(confirm("Do you want to add it to your cart?")){
-        setTimeout(function() {if (confirm("Item added to your cart.Want to view?")){
-            window.location.href="cart.html";
-        }}, 500);
+    if(confirm("Do you want to order?")){
+            window.location.href="../billing.html";
     }
 }
