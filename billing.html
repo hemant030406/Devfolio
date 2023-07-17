@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="billing.css">
+    <title>Home Page</title>
+</head>
+
+<body >
+     <header id="header" style="position: fixed;">
+        <div class="navbar">
+            <div class="logo">
+                <div class="logo-image"></div>
+            </div>
+            <div class="location">
+                <div class="location-logo">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="location-name">Deliver to Delhi</div>
+            </div>
+            <div class="search">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="search-box">
+                    <input type="search" id="search-bar" placeholder="Search Here">
+                </div>
+            </div>
+            <button>
+                <div class="sign-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="sign-name">Sign In
+            </div>
+        </button>
+        </div>
+        <div class="menu">
+            <div class="menu-opt"><a href="home_page.html" class="active">Home</a></div>
+            <div class="menu-opt"><a href="#">Tea</a></div>
+            <div class="menu-opt"><a href="#">Coffee</a></div>
+            <div class="menu-opt"><a href="#">Juices</a></div>
+            <div class="menu-opt"><a href="#">About Us</a></div>
+        </div>
+     </header>
+    <div id="main" >
+        <!-- just a holder -->
+        <header style="visibility: hidden;">
+            <div class="navbar">
+                <div class="logo">
+                    <div class="logo-image"></div>
+                </div>
+                <div class="location">
+                    <div class="location-logo">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="location-name">Deliver to Delhi</div>
+                </div>
+                <div class="search">
+                    <div class="search-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="search-box">
+                        <input type="search" id="search-bar" placeholder="Search Here">
+                    </div>
+                </div>
+                <button>
+                    <div class="sign-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="sign-name">Sign In
+                </div>
+            </button>
+            </div>
+            <div class="menu">
+                <div class="menu-opt"><a href="home_page.html" class="active">Home</a></div>
+                <div class="menu-opt"><a href="#">Tea</a></div>
+                <div class="menu-opt"><a href="#">Coffee</a></div>
+                <div class="menu-opt"><a href="#">Juices</a></div>
+                <div class="menu-opt"><a href="#">About Us</a></div>
+            </div>
+         </header>
+         <!-- <hr style="background-color: black;width: 100%;height: 1px;margin-top: 3%; border: none;"> -->
+         <div class="txt" style="padding-top: 50px;">
+            <h1>Plans</h1>
+            <h4 style="margin-top: 2px;">Choose wisely!!They are important.</h4>
+         </div>
+
+        <div id="card_container">
+            <div class="card" style="background-color: 	#50BFE6">
+              
+                <h3 class="plan">Free</h3>
+                <center>
+                <p class="price">
+                    <span style="font-size: 200%; font-weight: bold; font-family: 'Times New Roman', Times, serif;">₹0</span>
+                    <span style="font-family: 'Times New Roman', Times, serif;">per month</span></p>
+                <p class="description">Basic features.Set the timer for maximum 12 hours.</p>
+                <button id="free_button">Current Plan</button>
+
+              </center>  
+            </div>
+            <div class="card" style="background-color: 	#F8D568 ">
+             <h3 class="plan">Pro</h3>
+                
+                    <center><p class="price">
+                    <span style="font-size: 200%; font-weight: bold; font-family: 'Times New Roman', Times, serif;">₹50</span>
+                    <span style="font-family: 'Times New Roman', Times, serif;">per month</span></p>
+                <p class="description">Set the timer for maximum 24 hours.Set a Schedule for your beverages.</p>
+                <button id="pro_button">Upgrade Plan</button>
+            </center>   
+            </div>
+            <div class="card" style="background-color:	#FF9966">
+                <h3 class="plan">Ultimate</h3>
+                    
+                        <center><p class="price">
+                        <span style="font-size: 200%; font-weight: bold;font-family: 'Times New Roman', Times, serif; ">₹90</span>
+                        <span style="font-family: 'Times New Roman', Times, serif;">per year</span></p>
+                    <p class="description">Same features as pro.It's relatively cheaper plan.</p>
+                    <button id="ultimate_button">Upgrade Plan</button>
+                </center>
+            </div>
+        </div>
+        <!-- <hr style="background-color: black;width: 100%;height: 1px;margin-top: 3%; border: none;"> -->
+
+       <center>
+        <div class="alert"> 
+            <strong>Error!</strong> Enter a value between 0 to 50.
+          </div>
+       </center> 
+
+        <div id="order_section">
+            <h1 class="txt">Place Your Order</h1>
+            <div class="order_selector">
+                <input type="checkbox" id="chai" name="card1" value="Yes" >
+                <input type="checkbox" id="coffee" name="card2" value="Yes">
+                <input type="checkbox" id="Juices" name="card3" value="Yes">
+                <div class="main_card_order">
+                    <label for="card1" >
+                        <div class="card_order" id="chai_order">
+                            <div class="card_txt"><i>Tea</i></div>
+                        </div>
+                        <div class="itemss" id="chai_list">
+                            <center>
+                            <div class="item" >
+                                <span class="item_name">Variety1</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box" ><input class="input_qt" type="number" min="0" max="50" value="0"  name="qt_chai_item1" >  </span>
+                            </div>
+                            <div class="item">
+                                <span class="item_name">Variety2</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_chai_item2" >  </span>
+                            </div>
+                            <div class="item">
+                                <span class="item_name">Variety3</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_chai_item3" >  </span>
+                            </div>
+                            <div class="item">
+                                <span class="item_name">Variety4</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_chai_item4" >  </span>
+                            </div>
+                            <div class="item">
+                                <span class="item_name">Variety5</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"    name="qt_chai_item5" >  </span>
+                            </div>
+                        </center>
+                        </div>
+                    </label>
+                </div>
+                <div class="main_card_order">
+                    <label for="card2">
+                        <div class="card_order" id="coffee_order">
+                            <div class="card_txt"><i>Coffee</i></div>
+                        </div>
+                        <div class="itemss" id="coffee_list">
+                            <center>
+                            <div class="item">
+                                <span class="item_name">Variety1</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box" id="coffee1"><input class="input_qt" type="number" min="0" value="0"   max="50"  name="qt_coffee_item1" >  </span>
+                            </div>
+                            <div class="item">
+                                <span class="item_name">Variety2</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box" id="coffee2"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_coffee_item2" >  </span>
+                            </div>
+                            <div class="item">
+                                <span class="item_name">Variety3</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box" id="coffee3"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_coffee_item3" >  </span>
+                            </div>
+                        </center>
+                        </div>
+                    </label>
+                </div>
+                
+                <div class="main_card_order" id="main_card_order3">
+                    <label for="card3">
+                        <div class="card_order" id="Juice_order">
+                            <div class="card_txt"><i>Juices</i></div>
+                        </div>
+                        <div class="itemss" id="Juice_list">
+                            <center>
+                            <div class="item">
+                                <span class="item_name">Variety1</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box" id="Juice1"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_Juice_item1" >  </span>
+                            </div>
+                            <div class="item">
+                                <span class="item_name">Variety2</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box" id="Juice2"><input class="input_qt" type="number" min="0" max="50" value="0"  name="qt_Juice_item2" >  </span>
+                            </div>
+                            <div class="item">
+                                <span class="item_name">Variety3</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box" id="Juice3"><input class="input_qt" type="number"  min="0" max="50" value="0"  name="qt_Juice_item3" >  </span>
+                            </div>
+                            <div class="item">
+                                <span class="item_name">Variety4</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box" id="Juice4"><input class="input_qt" type="number"  min="0" max="50" value="0"  name="qt_Juice_item4" >  </span>
+                            </div>
+                            <div class="item">
+                                <span class="item_name">Variety5</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box" id="Juice5"><input class="input_qt" type="number" min="0" max="50"  value="0"  name="qt_Juice_item5" >  </span>
+                            </div>
+                        </center>
+                        </div>
+                    </label>
+                </div>
+                
+            </div>
+
+            <center>
+                <div style="width: 80%;display: flex;">
+                    <fieldset class="plan_implement" id="free_plan">
+                        <legend class="plan_name">Free Plan</legend>
+                        <div>
+                            <center>
+                                <span style="width: 50%;"><strong>Enter the order time</strong></span>
+                            <span style="width: 50%;"><input name="time" type="time" class="timer" ></span>
+                        </center>
+                        </div>
+                    </fieldset>
+        
+                    <fieldset class="plan_implement" id="pro_plan">
+                        <legend class="plan_name">Pro/Ultimate Plan</legend>
+                        <div style="display: flex;">
+                            <input type="radio" name="order_type1" style="margin-left: 50px;">
+                            <label for="order_type1" style="width: 80%;">
+                                <span>
+                                    <center>
+                                        <span style="width: 50%;"><strong>Enter the order time</strong></span>
+                                    <span style="width: 50%;"><input name="time" type="time" class="timer"  ></span>
+                                    </center>
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <div style="display: flex;">
+                            <input type="radio" name="order_type2" style="margin-left: 50px;">
+                        <label for="order_type2" style="width: 90%;">
+                            <div width="100%" >
+                                <center>
+                                <span ><strong>Schedule Your Order</strong> </span>
+                                <span style="margin-left: 30px;">
+                                    <span class="days">W</span>
+                                    <span class="days"><span>Th</span></span>
+                                    <span class="days"><span>F</span></span>
+                                    <span class="days"><span>Sa</span></span>
+                                    <span class="days"><span>Su</span></span>
+                                    
+                                    <span class="days"><span>M</span></span>
+                                    <span class="days"><span>Tu</span></span>
+                                </span>
+                                <span style="margin-left: -100px;"><input name="time" type="time" class="timer" ></span>
+                                </center>
+                            </div>
+                        </label>
+                        </div>
+                        
+                    </fieldset>
+                </div>
+            </center>
+
+            <div id="btn_submit_div">
+                <center><button id ="btn_submit" target="_blank" >Order</button></center>
+            </div>
+
+        </div>
+
+        
+
+        <div id="Order_main">
+                <h1 class="txt">Order History</h1>
+                <center>
+                <div class="itemsss" >
+                    <div class="item">
+                        <span class="order_name"><div>1.Order Name on</div></span>
+                        <span class="order_date">dd/mm/yyyy :</span>
+                        <span class="wasSuccess">Yes/No</span>
+                        <span class="link_payment"><a href="#" style="text-decoration: none;" class="view_link">View Transscript</a></span>
+                    </div>
+                </div>
+            </center>
+        </div>
+        
+    </div>
+    <footer id="footer">
+        <center> 
+            <p style="color: white;">About Us</p>
+            <p style="color: white;">Indian Institute Of technology Pakkad</p>
+            <p style="color: white;"><a href="https://www.linkedin.com/in/chirag-varshney-039964225/" style="color: wheat;text-decoration: none;">Chirag Varshney</a> <a href="#" style="text-decoration: none;padding-left: 20px;color: wheat;">Hemant Pathak</a> <a style="text-decoration: none;color: wheat; padding-left: 20px;" href="https://www.linkedin.com/in/priyanshu-pandey-851509281/">Priyanshu Pandey</a></p>
+        </center>
+    </footer>
+</body>
+<script src="billing.js"> </script>
+</html>
