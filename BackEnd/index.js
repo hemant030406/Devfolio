@@ -23,3 +23,6 @@ MongoClient.connect(
                 console.log(`listening to the port : ${port}`)
             })
     })
+
+
+console.log("here 2")
