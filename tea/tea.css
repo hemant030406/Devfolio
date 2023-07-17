@@ -100,7 +100,7 @@ body {
     color:Black;
     text-decoration: none;
 }
-.menu-opt a:active , a:hover{
+.menu-opt a:active ,.menu-opt a:hover{
     font-size: 1.75rem;
     background-color:palevioletred;
     text-decoration: underline;
