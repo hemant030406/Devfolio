@@ -10,5 +10,5 @@ app.use("/api/v1/reviews",reviews)
 app.use("*",(req,res) =>{
     res.status(404).json({error:"not found"})
 })
-
+console.log("here 1")
 export default app
