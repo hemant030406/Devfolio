@@ -122,6 +122,6 @@ function hidedetails9(){
 
 function confirmAdding(){
     if(confirm("Do you want to order?")){
-            window.location.href="../billing.html";
+            window.location.href="billing.html";
     }
 }
