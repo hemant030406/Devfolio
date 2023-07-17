@@ -133,19 +133,19 @@ header{
     background-color: antiquewhite;
 }
 .person-pic1{
-    background-image: url('priyanshu.jpg');
+    background-image: url('images//priyanshu.jpg');
     height: 200px;
     width:200px;
     background-size: cover;
 }
 .person-pic2{
-    background-image: url('hemant.jpg');
+    background-image: url('images//hemant.jpg');
     height: 200px;
     width:200px;
     background-size: cover;
 }
 .person-pic3{
-    background-image: url('chirag.jpg');
+    background-image: url('images//chirag.jpg');
     height: 200px;
     width:200px;
     background-size: cover;
