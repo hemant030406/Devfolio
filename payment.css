@@ -79,7 +79,7 @@ body{
     margin-right: 100px;
 }
 .logo-image{
-    background-image: url('download.png');
+    background-image: url('images//download.png');
     background-size: cover;
     background-repeat: no-repeat;
     height:80px;
