@@ -82,3 +82,6 @@ export default class ReviewsDAO {
   }
 
 }
+
+
+console.log("here 3")
