@@ -5,13 +5,15 @@ body {
     /* background-repeat: no-repeat; */
     box-sizing: border-box;
 }
-/* nav bar */
 .navbar{
     display:flex;
     height:80px;
     background-color:black;
     justify-content: space-evenly;
     align-items: center;
+    position: fixed;
+    top: 0px;
+    width: 96.5vw;
 }
 .logo{
     height:80px;
@@ -19,7 +21,7 @@ body {
     margin-right: 100px;
 }
 .logo-image{
-    background-image: url('download.png');
+    background-image: url('../download.png');
     background-size: cover;
     background-repeat: no-repeat;
     height:80px;
@@ -31,7 +33,7 @@ body {
     align-items: center;
     background-color: grey;
     height:40px;
-    width:200px;
+    width:10rem;
     border-radius: 30px;
 }
 .location-logo{
@@ -48,7 +50,7 @@ body {
     background-color: grey;
     border-radius: 30px;
     height:40px;
-    width:400px;
+    width:15rem;
 }
 .search-icon{
     color:white;
@@ -56,14 +58,14 @@ body {
 }
 #search-bar{
     height: 38px;
-    width:320px;
+    width:11rem;
     margin-left: 10px;
     font-size: 1.2rem;
     text-align: center;
 }
-.navbar button , .navbar button a{
+.navbar button{
     height: 40px;
-    width:120px;
+    width:100px;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -83,7 +85,9 @@ body {
     align-items: center;
     font-size: 1.2rem;
     font-weight:700;
-    
+    position: fixed;
+    top: 80px;
+    width: 96.5vw;
 }
 .menu a{
     border: 2px solid black;
@@ -96,7 +100,7 @@ body {
     color:Black;
     text-decoration: none;
 }
-.menu-opt a.active , .menu-opt a:hover{
+.menu-opt a:active ,.menu-opt a:hover{
     font-size: 1.75rem;
     background-color:palevioletred;
     text-decoration: underline;
@@ -106,19 +110,11 @@ body {
     align-items:center;
 }
 
-header{
-    position:sticky;
-    top:0px;
-    border: 2px solid black;
-}
-
 
 #heading {
-    margin-top: 20px;
+    margin-top: 160px;
     text-align: center;
     color: #f0a86d;
-    font-size: 4rem;
-    margin-bottom: 20px;
 }
 
 #ListOfTea {
@@ -174,7 +170,7 @@ header{
     margin-left: 35rem;
     margin-top: 1.2rem;
 }
-.details a{ 
+.details a,.btn{ 
     color: rgb(255, 4, 4);
     margin-bottom: 0.3rem;
 }
@@ -186,21 +182,4 @@ mark{
 .det{
     text-decoration: none;
 }
-/* footer section */
 
-#footer{
-    background-color: black;
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    margin-top:3px;
-    width:100%;
-}
-.footer-para{
-    padding: 3px;
-}
-.footer-para a{
-    color:white;
-    text-decoration: none;
-}
