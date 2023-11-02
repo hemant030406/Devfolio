@@ -1,0 +1,212 @@
+*{
+    box-sizing: border-box;
+    left: 0;
+    margin:0;
+    padding: 0;
+}
+body {
+    color: rgb(28, 134, 144);
+    background-image: url("https://images.news18.com/ibnlive/uploads/2023/05/international-tea-day-2023.jpg");
+    background-size: contain;
+    /* background-repeat: no-repeat; */
+    box-sizing: border-box;
+}
+/* nav bar */
+.navbar{
+    display:flex;
+    height:80px;
+    background-color:black;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.logo{
+    height:80px;
+    width:80px;
+    margin-right: 100px;
+}
+.logo-image{
+    background-image: url('../images/download.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:80px;
+    width:180px;
+}
+.location{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    height:40px;
+    width:200px;
+    border-radius: 30px;
+}
+.location-logo{
+    color:white;
+}
+.location-name{
+    color:white;
+    margin-left: 10px;;
+}
+.search{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    border-radius: 30px;
+    height:40px;
+    width:400px;
+}
+.search-icon{
+    color:white;
+    font-size: 20px;
+}
+#search-bar{
+    height: 38px;
+    width:320px;
+    margin-left: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.navbar button , .navbar button a{
+    height: 40px;
+    width:120px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+.sign-name{
+    margin-left: 10px;
+}
+
+/* menu bar */
+.menu{
+    background-color: rgb(85, 156, 174);
+    height:60px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight:700;
+    
+}
+.menu a{
+    border: 2px solid black;
+    border-radius: 10px;
+    width:120px;
+    height:40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:Black;
+    text-decoration: none;
+}
+.menu-opt a.active , .menu-opt a:hover{
+    font-size: 1.75rem;
+    background-color:palevioletred;
+    text-decoration: underline;
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+header{
+    position:sticky;
+    top:0px;
+    border: 2px solid black;
+}
+
+
+#heading {
+    margin-top: 20px;
+    text-align: center;
+    color: #f0a86d;
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+#ListOfTea {
+    margin-top: -2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ListOfTea ul li {
+    background-color: #c8e2d8;
+    width: 40rem;
+    height: 7rem;
+    list-style: none;
+    border: 2px solid grey;
+    margin-top: 0.7rem;
+    margin-left: -8px;
+    padding: 0.5rem;
+    border-radius: 10%;
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#ListOfTea ul div img{
+    padding-right: 1rem;
+}
+
+.btn,.details {
+    width: 4rem;
+    height: 1.5rem;
+    background-color: #7fd6b5;
+    float: right;
+    cursor: pointer;
+    border:2px solid #7fd6b5;
+    margin-right: 0.5rem;
+    margin-top: 0.7rem;
+    border-radius: 25%;
+}
+
+.hiddenText,.hiddenDetails {
+    float: right;
+    border: 2px solid aliceblue;
+    background-color: blanchedalmond;
+    padding: 0.3rem;
+    font-size: xx-small;
+    margin-left: 28rem;
+    margin-top: 1.2rem;
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    display: none;
+}
+.hiddenText{
+    margin-left: 35rem;
+    margin-top: 1.2rem;
+}
+.details a{ 
+    color: rgb(255, 4, 4);
+    margin-bottom: 0.3rem;
+}
+mark{
+    padding-left: 0.2rem;
+    font-weight: bolder;
+    color: #b08823;
+}
+.det{
+    text-decoration: none;
+}
+/* footer section */
+
+#footer{
+    background-color: black;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    margin-top:3px;
+    width:100%;
+}
+.footer-para{
+    padding: 3px;
+}
+.footer-para a{
+    color:white;
+    text-decoration: none;
+}
