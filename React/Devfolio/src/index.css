@@ -1,0 +1,555 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.main1{
+  background-image: url('./images/girl_drinking_juice.png');
+  height:800px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main1-text{
+  height: 100px;
+  width:500px;
+  font-size: 2.5rem;
+  display:flex;
+  font-style: italic;
+  color:rgb(73, 24, 126);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  padding-top: 100px;
+  padding-left: 100px;
+}
+
+/* quality */
+.quality{
+  height:200px;
+  font-size: 6rem;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-family:fantasy;
+  background-color:darkkhaki;
+  margin-top: 3px;
+  border:2px solid yellowgreen;
+  font-style: italic;
+}
+
+/* varities */
+.varities{
+  background-color:beige;
+  margin-top: 3px;
+}
+
+.varities1{
+  height:35vh;
+  width:68vw;
+  border:2px solid palevioletred;
+  margin-top: 1px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color:aliceblue;
+  border-radius: 20px;
+  padding-left: 20px;
+  
+}
+.varities2{
+  height:35vh;
+  width:68vw;
+  border:2px solid palevioletred;
+  margin-left: 27.5vw;
+  margin-top: 10px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding-right:20px;
+  background-color:darkgray;
+  border-radius: 20px;
+}
+.varities3{
+  height:35vh;
+  width:68vw;
+  border:2px solid palevioletred;
+  margin-top: 10px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color:paleturquoise;
+  border-radius: 20px;
+  padding-left: 20px;
+}
+.varities-image1{
+  background-image: url('./images/coffee.jpg');
+  background-size: contain;
+  height:25vh;
+  width:22vw;
+}
+.varities-image2{
+  background-image: url('./images/Masala_tea_with_biscuit.jpg');
+  background-size: contain;
+  height:25vh;
+  width:25.92vw;
+}
+.varities-image3{
+  background-image: url('./images/juice.jpg');
+  background-size: contain;
+  height:29vh;
+  width:22vw;
+}
+.varities-text{
+  width:40vw;
+  margin-left: 20px;
+  margin-right:20px;
+  height:27vh;
+  /* border:2px dashed black; */
+  padding:20px;
+}
+.varity-heading{
+  font-size: 3rem;
+  color:brown;
+}
+.varity-desc{
+  font-size: 1.4rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:darkslategray;
+  font-style: italic;
+}
+.explore{
+  margin-left:28vw;
+  margin-top:4vh;
+  height:5vh;
+  width:10vw;
+  border-radius:10px;
+  font-size: 1.25rem;
+}
+
+
+/* join prime */
+.joinprime{
+  height:400px;
+  background-image: url('./images/shopping1.jpg');
+  background-size: cover;
+  margin-top: 3px;
+  border:2px solid green;
+}
+
+.prime{
+  font-size: 2rem;
+  padding-left:100px;
+  padding-top:30px;
+  font-weight: 700;
+  color:rgb(201, 88, 201);
+}
+
+
+.prime-benefits{
+  font-size: 1.5rem;
+  font-style: italic;  
+  display:flex; 
+  flex-direction: column;
+}
+.point{
+  border-radius: 45%;
+  width:600px;
+  height:40px;
+  margin-left: 150px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+#point1{
+  background-color: #f0ff80;
+  border: 2px solid green;
+  margin-top: 30px;
+  color:green;
+  
+}
+#point2{
+  background-color: #8bc2ff;
+  border:2px solid brown;
+  margin-top: 30px;
+  color:brown;
+}
+#point3{
+  background-color: #abfff5;
+  border:2px solid blue;
+  margin-top:30px;
+  color:blue;
+}
+#point4{
+  background-color: #f5dbff;
+  border:2px solid red;
+  margin-top: 30px;
+  color:red;
+}
+
+.joinprime .points{
+  padding:15px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* registration */
+.registration{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:60px;
+  background-color: antiquewhite;
+  margin-top:3px;
+  border: 2px solid palegoldenrod;
+  
+}
+.registration-text{
+  font-weight: 700;
+  font-size: 2rem;
+  
+}
+.registration-button{
+  color:green;
+  margin-left: 100px;
+  font-size: 1.25rem;
+  border-radius: 15px;
+  height:40px;
+  width:100px;
+}
+
+
+/* footer section */
+
+#footer{
+  background-color: black;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  margin-top:3px;
+  width:100%;
+}
+.footer-para{
+  padding: 3px;
+}
+.footer-para a{
+  color:white;
+  text-decoration: none;
+}
+
+.location{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  height:40px;
+  width:200px;
+  border-radius: 30px;
+}
+
+.logo{
+  height:80px;
+  width:80px;
+  margin-right: 100px;
+}
+.logo-image{
+  background-image: url('images//download.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:80px;
+  width:180px;
+}
+.location-logo{
+  color:white;
+}
+.location-name{
+  color:white;
+  margin-left: 10px;;
+}
+.search{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  border-radius: 30px;
+  height:40px;
+  width:275px;
+}
+.sign-in{
+  display:flex;
+  float: right;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 30px;
+  height:40px;
+  width:150px;
+}
+
+.sign_in{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  margin-top: 200px;
+  margin-bottom: 20px;
+}
+
+.sign{
+  border:4px solid black;
+  width:500px;
+  border-radius: 30px;
+  display:inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}
+.entry_details{
+  padding-top: 10px;
+}
+.heading{
+  font-size: 3rem;
+  
+}
+
+.details{
+  font-size:1.25rem;
+  font-family: cursive;
+  width:470px;
+}
+.answer input{
+  width: 470px;
+  height:20px;
+}
+.answer input:hover{
+  width:472px;
+  height:22px;
+  border:2px solid green;
+}
+#action{
+  font-size: 1.2rem;
+  width:100px;
+  background-color: yellow;
+  border:2px solid black;
+  border-radius: 10px;
+}
+.tea{
+  margin-top: 96px;
+  background-color: rgb(195, 158, 71);
+  margin-bottom: -15px;
+}
+.coffeemain{
+  margin-top: 96px;
+  background-color: #93774c;
+  margin-bottom: -15px;
+}
+.juice{
+  margin-top: 96px;
+  background-color: rgb(161, 185, 72);
+  margin-bottom: -15px;
+}
+.registrationMain{
+  margin-top: 100px;
+}
+.register{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 650px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.registration{
+  border:4px solid black;
+  width:400px;
+  border-radius: 30px;
+  display:inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 650px;
+}
+.entry_details{
+  padding-top: 10px;
+}
+.heading{
+  font-size: 3rem;
+  
+}
+
+.details{
+  font-size:1.25rem;
+  font-family: cursive;
+  width:370px;
+}
+#create_password{
+  text-align: center;
+}
+.answer input{
+  width: 370px;
+  height:20px;
+}
+.answer input:hover{
+  width:372px;
+  height:22px;
+  border:2px solid green;
+}
+#action{
+  font-size: 1.2rem;
+  background-color: yellow;
+  border:2px solid black;
+  border-radius: 10px;
+}
+.homeregistration{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:100px;
+  background-color: antiquewhite;
+  margin-top:35px;
+  border: 2px solid palegoldenrod;
+  
+}
+.registration-text{
+  font-weight: 700;
+  font-size: 2rem;
+  
+}
+.registration-button{
+  color:green;
+  margin-left: 100px;
+  font-size: 1.25rem;
+  border-radius: 15px;
+  height:40px;
+  width:100px;
+}
+.about_text{
+  font-size: 2rem;
+  font-family: cursive;
+  font-weight:700;
+  font-style: italic;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+.about_person{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.person1 , .person2 , .person3{
+  margin:50px;
+  border:4px solid brown;
+  padding:30px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: antiquewhite;
+}
+.person-pic1{
+  background-image: url('images//priyanshu.jpg');
+  height: 200px;
+  width:200px;
+  background-size: cover;
+}
+.person-pic2{
+  background-image: url('images//hemant.jpg');
+  height: 200px;
+  width:200px;
+  background-size: cover;
+}
+.person-pic3{
+  background-image: url('images//chirag.jpg');
+  height: 200px;
+  width:200px;
+  background-size: cover;
+}
+.person-detail{
+  font-size: 2rem;
+}
+
+.person-detail li{
+  list-style:none;
+}
+.nav-heads:hover{
+  color: rgb(153, 34, 197) !important;
+}
+.active-nav-head{
+  color: rgb(153, 34, 197) !important;
+}
+.suggestion-box{
+  position: absolute;
+  width: 206px;
+  /* border-bottom-left-radius: 15%;
+  border-bottom-right-radius: 15%; */
+  margin-left: 54.2rem;
+  margin-top: 1.2rem;
+  z-index: 2;
+  position: fixed;
+  background-color: white;
+  visibility: hidden;
+  padding-bottom: -2px;
+}
+.suggestion-box ul{
+  z-index: 2;
+  padding: 5px;
+}
+.suggestion-box ul li {
+  color: black;
+  list-style: none;
+  cursor: pointer;
+}
+.suggestion-box ul li:hover{
+  background-color: #8bc2ff;
+}
+.navbar{
+  display: block;
+  z-index: 1;
+}
+*{
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.imgBox{
+  width: 9rem;
+  height: 6rem;
+  background-image: url("https://hashtaglegend.com/wp-content/uploads/2022/06/Tea-WG-Darjeeling-HK.jpg");
+  color: black;
+  background-color: black;
+  background-size: cover;
+}
+.quantity{
+  width: 9rem;
+  text-align: center;
+  /* border: 2px solid red; */
+}
+.content{
+  width: 9rem;
+  text-align: center;
+  /* border: 2px solid red; */
+  font-weight: 600;
+}
+.cart{
+  position: absolute;
+  left: 25%;
+  width: 50%;
+  transform: translate(0, 50%);
+  margin-top: 2.5rem;
+  padding: 5px;
+  border: 2px solid black;
+  display: block;
+}
