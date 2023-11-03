@@ -9,16 +9,18 @@
 * Chirag Varshney -
       * top Navigation Bar
       * Home-Page
-      * About
-      * Juice page
+      * Registration
+      * Sign In
 
 * Hemant Pathak-
       * Tea Page
       * Coffee Page
-      * Search bar of topNavigation bar
+      * React version of the project
+      * Juice Page
 
 * Priyanshu Pandey-
       * Billing Page
       * Payment Page
+      * Login-logout-auth 
       * Backend API- 
 
