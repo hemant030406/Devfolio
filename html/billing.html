@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/billing.css">
     <title>Home Page</title>
 </head>
 
 <body >
-     <header id="header" style="position: fixed;">
+     <header id="header" >
         <div class="navbar">
             <div class="logo">
                 <div class="logo-image"></div>
@@ -29,11 +28,14 @@
                 </div>
             </div>
             <button>
-                <div class="sign-icon">
-                <i class="fa-solid fa-user"></i>
-            </div>
-            <div class="sign-name">Sign In
-            </div>
+                <a  id="logoutbtn"   style="display:flex;">
+
+                    <div class="sign-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="sign-name" id="userInfo">
+                </div>
+                </a>
         </button>
         </div>
         <div class="menu">
@@ -41,47 +43,10 @@
             <div class="menu-opt"><a href="tea.html">Tea</a></div>
             <div class="menu-opt"><a href="coffee.html">Coffee</a></div>
             <div class="menu-opt"><a href="juice.html">Juices</a></div>
-            <div class="menu-opt"><a href="about_us.html" class="active">About Us</a></div>
+            <div class="menu-opt"><a href="about_us.html">About Us</a></div>
         </div>
      </header>
-    <div id="main" >
-        <!-- just a holder -->
-        <header style="visibility: hidden;">
-            <div class="navbar">
-                <div class="logo">
-                    <div class="logo-image"></div>
-                </div>
-                <div class="location">
-                    <div class="location-logo">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="location-name">Deliver to Delhi</div>
-                </div>
-                <div class="search">
-                    <div class="search-icon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </div>
-                    <div class="search-box">
-                        <input type="search" id="search-bar" placeholder="Search Here">
-                    </div>
-                </div>
-                <button>
-                    <div class="sign-icon">
-                    <i class="fa-solid fa-user"></i>
-                </div>
-                <div class="sign-name">Sign In
-                </div>
-            </button>
-            </div>
-            <div class="menu">
-                <div class="menu-opt"><a href="home_page.html" class="active">Home</a></div>
-                <div class="menu-opt"><a href="#">Tea</a></div>
-                <div class="menu-opt"><a href="#">Coffee</a></div>
-                <div class="menu-opt"><a href="#">Juices</a></div>
-                <div class="menu-opt"><a href="#">About Us</a></div>
-            </div>
-         </header>
-         <!-- <hr style="background-color: black;width: 100%;height: 1px;margin-top: 3%; border: none;"> -->
+    <div id="main" style="overflow: hidden;display: block;margin-top: auto;" >
          <div class="txt" style="padding-top: 50px;">
             <h1>Plans</h1>
             <h4 style="margin-top: 2px;">Choose wisely!!They are important.</h4>
@@ -167,6 +132,31 @@
                                 <span class="item_des">Short Discription</span>
                                 <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"    name="qt_chai_item5" >  </span>
                             </div>
+                            <div class="item" >
+                                <span class="item_name">Variety6</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box" ><input class="input_qt" type="number" min="0" max="50" value="0"  name="qt_chai_item6" >  </span>
+                            </div>
+                            <div class="item">
+                                <span class="item_name">Variety7</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_chai_item7" >  </span>
+                            </div>
+                            <div class="item">
+                                <span class="item_name">Variety8</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_chai_item8" >  </span>
+                            </div>
+                            <div class="item">
+                                <span class="item_name">Variety9</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_chai_item9" >  </span>
+                            </div>
+                            <div class="item">
+                                <span class="item_name">Variety10</span>
+                                <span class="item_des">Short Discription</span>
+                                <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"    name="qt_chai_item10" >  </span>
+                            </div>
                         </center>
                         </div>
                     </label>
@@ -178,21 +168,56 @@
                         </div>
                         <div class="itemss" id="coffee_list">
                             <center>
-                            <div class="item">
-                                <span class="item_name">Variety1</span>
-                                <span class="item_des">Short Discription</span>
-                                <span class="input_qt_box" id="coffee1"><input class="input_qt" type="number" min="0" value="0"   max="50"  name="qt_coffee_item1" >  </span>
-                            </div>
-                            <div class="item">
-                                <span class="item_name">Variety2</span>
-                                <span class="item_des">Short Discription</span>
-                                <span class="input_qt_box" id="coffee2"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_coffee_item2" >  </span>
-                            </div>
-                            <div class="item">
-                                <span class="item_name">Variety3</span>
-                                <span class="item_des">Short Discription</span>
-                                <span class="input_qt_box" id="coffee3"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_coffee_item3" >  </span>
-                            </div>
+                                <div class="item" >
+                                    <span class="item_name">Variety1</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box" ><input class="input_qt" type="number" min="0" max="50" value="0"  name="qt_coffee_item1" >  </span>
+                                </div>
+                                <div class="item">
+                                    <span class="item_name">Variety2</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_coffee_item2" >  </span>
+                                </div>
+                                <div class="item">
+                                    <span class="item_name">Variety3</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_coffee_item3" >  </span>
+                                </div>
+                                <div class="item">
+                                    <span class="item_name">Variety4</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_coffee_item4" >  </span>
+                                </div>
+                                <div class="item">
+                                    <span class="item_name">Variety5</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"    name="qt_coffee_item5" >  </span>
+                                </div>
+                                <div class="item" >
+                                    <span class="item_name">Variety6</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box" ><input class="input_qt" type="number" min="0" max="50" value="0"  name="qt_coffee_item6" >  </span>
+                                </div>
+                                <div class="item">
+                                    <span class="item_name">Variety7</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_coffee_item7" >  </span>
+                                </div>
+                                <div class="item">
+                                    <span class="item_name">Variety8</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_coffee_item8" >  </span>
+                                </div>
+                                <div class="item">
+                                    <span class="item_name">Variety9</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_coffee_item9" >  </span>
+                                </div>
+                                <div class="item">
+                                    <span class="item_name">Variety10</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"    name="qt_coffee_item10" >  </span>
+                                </div>
                         </center>
                         </div>
                     </label>
@@ -205,31 +230,56 @@
                         </div>
                         <div class="itemss" id="Juice_list">
                             <center>
-                            <div class="item">
-                                <span class="item_name">Variety1</span>
-                                <span class="item_des">Short Discription</span>
-                                <span class="input_qt_box" id="Juice1"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_Juice_item1" >  </span>
-                            </div>
-                            <div class="item">
-                                <span class="item_name">Variety2</span>
-                                <span class="item_des">Short Discription</span>
-                                <span class="input_qt_box" id="Juice2"><input class="input_qt" type="number" min="0" max="50" value="0"  name="qt_Juice_item2" >  </span>
-                            </div>
-                            <div class="item">
-                                <span class="item_name">Variety3</span>
-                                <span class="item_des">Short Discription</span>
-                                <span class="input_qt_box" id="Juice3"><input class="input_qt" type="number"  min="0" max="50" value="0"  name="qt_Juice_item3" >  </span>
-                            </div>
-                            <div class="item">
-                                <span class="item_name">Variety4</span>
-                                <span class="item_des">Short Discription</span>
-                                <span class="input_qt_box" id="Juice4"><input class="input_qt" type="number"  min="0" max="50" value="0"  name="qt_Juice_item4" >  </span>
-                            </div>
-                            <div class="item">
-                                <span class="item_name">Variety5</span>
-                                <span class="item_des">Short Discription</span>
-                                <span class="input_qt_box" id="Juice5"><input class="input_qt" type="number" min="0" max="50"  value="0"  name="qt_Juice_item5" >  </span>
-                            </div>
+                                <div class="item" >
+                                    <span class="item_name">Variety1</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box" ><input class="input_qt" type="number" min="0" max="50" value="0"  name="qt_Juice_item1" >  </span>
+                                </div>
+                                <div class="item">
+                                    <span class="item_name">Variety2</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_Juice_item2" >  </span>
+                                </div>
+                                <div class="item">
+                                    <span class="item_name">Variety3</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_Juice_item3" >  </span>
+                                </div>
+                                <div class="item">
+                                    <span class="item_name">Variety4</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_Juice_item4" >  </span>
+                                </div>
+                                <div class="item">
+                                    <span class="item_name">Variety5</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"    name="qt_Juice_item5" >  </span>
+                                </div>
+                                <div class="item" >
+                                    <span class="item_name">Variety6</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box" ><input class="input_qt" type="number" min="0" max="50" value="0"  name="qt_Juice_item6" >  </span>
+                                </div>
+                                <div class="item">
+                                    <span class="item_name">Variety7</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_Juice_item7" >  </span>
+                                </div>
+                                <div class="item">
+                                    <span class="item_name">Variety8</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_Juice_item8" >  </span>
+                                </div>
+                                <div class="item">
+                                    <span class="item_name">Variety9</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"   name="qt_Juice_item9" >  </span>
+                                </div>
+                                <div class="item">
+                                    <span class="item_name">Variety10</span>
+                                    <span class="item_des">Short Discription</span>
+                                    <span class="input_qt_box"><input class="input_qt" type="number" min="0" max="50" value="0"    name="qt_Juice_item10" >  </span>
+                                </div>
                         </center>
                         </div>
                     </label>
@@ -293,6 +343,10 @@
                 <center><button id ="btn_submit" target="_blank" >Order</button></center>
             </div>
 
+            <div id="btn_cart_div" >
+                <center><button id ="btn_submit_cart" target="_blank" >Add To Cart</button></center>
+            </div>
+
         </div>
 
         
@@ -321,5 +375,4 @@
     </footer>
 </body>
 <script src="../JS/billing.js"> </script>
-<script src="../JS/topNav.js"> </script>
 </html>

@@ -5,20 +5,16 @@
     padding: 0;
 }
 body{
-    min-height: 100vh;
     background-color: white;
-    max-height: 100vh;
     min-width: 1000px;
-    display: flex;
-    justify-content: center;
-    overflow-x: scroll;
+    box-sizing: border-box;
     
 }
 
 #main{
     height: 100%;
     width: 100%;
-    padding-bottom: 70px;
+    padding-bottom: 20px;
     overflow-y: scroll;
     font-family: 'Times New Roman', Times, serif;
     overflow-x: hidden;
@@ -62,12 +58,19 @@ body{
 }
 #footer{
     background-color: black;
-    position: fixed;
     align-self: end;
     min-height: 50px;
+    box-sizing: border-box;
     height: fit-content;
     width: 100%;
     padding-bottom:30px ;
+}
+.footer-para{
+    padding: 3px;
+}
+.footer-para a{
+    color:white;
+    text-decoration: none;
 }
 .plan{
     margin: 40px 30px 10px 30px;
@@ -181,7 +184,7 @@ body{
 #btn_submit:hover{
     background-color: #c2c2d6;
 }
-#btn_submit_div{
+#btn_submit_div,#btn_cart_div{
     margin-top: 20px;
 }
 .itemsss{
@@ -366,8 +369,4 @@ body{
     display:flex;
     justify-content: center;
     align-items:center;
-}
-#header{
-    width: 100%;
-    position: fixed;
 }

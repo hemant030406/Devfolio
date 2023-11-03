@@ -122,8 +122,13 @@ function hidedetails9(){
 
 function confirmAdding(){
     if(confirm("Do you want to add it to your cart?")){
-        setTimeout(function() {if (confirm("Item added to your cart.Want to view?")){
-            window.location.href="cart.html";
-        }}, 500);
+        // setTimeout(function() {if (confirm("Item added to your cart.Want to view?")){
+            // window.location.href="../html/cart.html";
+            window.open("../html/billing.html","_self")
+        // }}, 500);
     }
+}
+
+function goTobilling(){
+    window.location.href="../html/billing.html"
 }

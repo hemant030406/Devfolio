@@ -1,4 +1,58 @@
-const username="Alonot"
+const AccountName=document.getElementById("userInfo")
+const logoutbtn=document.getElementById('logoutbtn')
+const APIlink="http://localhost:5000/api/v1/user/"
+
+var username=null
+
+const authenticate=async function(){
+
+  await fetch(APIlink+"auth/",{
+                method:'GET',
+                headers:{
+                    'Accept':'application/json',
+                    'Content-Type':'application/json'
+                },
+                credentials:'include'
+            }).then(res => res.json())
+            .then(res => {
+              console.log(res)
+              if(!res.success){
+                  window.location.replace("./sign_in.html")
+              }else{
+                console.log(String(res.user),"LL")
+                AccountName.innerText=res['user']
+                  username=res['user']
+                  console.log("confirm")
+              }
+            })
+            .catch(err=>{
+              console.log(err)
+              window.location.replace("./sign_in.html")
+            }); 
+    
+
+}
+
+
+authenticate()
+
+if(logoutbtn != null){
+  logoutbtn.onclick = async function(){
+    await fetch(APIlink+"logout/",{
+          method:'GET',
+          credentials:'include'
+          }).then(res => res.json())
+          .then(res => {
+            console.log(res)
+            if(res.success){
+              window.location.replace("./sign_in.html")
+            }
+          })
+          .catch(err=>{
+            console.log(err)
+          }); 
+  }
+}
 var plan_name="free_plan"
 var total_bill=0
 var daysSelected=[false,false,false,false,false,false,false]
@@ -54,32 +108,130 @@ function clicked(id){
 
 //capture quantity....
 
-const chai_items=[{"qt_chai_item1":0},{"qt_chai_item2":0},{"qt_chai_item3":0},{"qt_chai_item4":0},{"qt_chai_item5":0}];
 
-const coffee_items=[{"qt_coffee_item1":0},{"qt_coffee_item2":0},{"qt_coffee_item3":0}];
+const chai_items={"qt_chai_item1":0,"qt_chai_item2":0,"qt_chai_item3":0,"qt_chai_item4":0,"qt_chai_item5":0,
+"qt_chai_item6":0,"qt_chai_item7":0,"qt_chai_item8":0,"qt_chai_item9":0,"qt_chai_item10":0}
 
-const Juice_items=[{"qt_Juice_item1":0},{"qt_Juice_item2":0},{"qt_Juice_item3":0},{"qt_Juice_item4":0},{"qt_Juice_item5":0}];
+const coffee_items={"qt_coffee_item1":0,"qt_coffee_item2":0,"qt_coffee_item3":0,"qt_coffee_item4":0,"qt_coffee_item5":0,
+"qt_coffee_item6":0,"qt_coffee_item7":0,"qt_coffee_item8":0,"qt_coffee_item9":0,"qt_coffee_item10":0}
+
+const Juice_items={"qt_Juice_item1":0,"qt_Juice_item2":0,"qt_Juice_item3":0,"qt_Juice_item4":0,"qt_Juice_item5":0,
+"qt_Juice_item6":0,"qt_Juice_item7":0,"qt_Juice_item8":0,"qt_Juice_item9":0,"qt_Juice_item10":0}
+
 
 assignfn();
+fetchBillingInfo();
+setplan()
+
+async function setplan(){
+
+    await fetch(APIlink+"plan",{
+        method:'GET',
+        credentials: 'include' ,// allow cookie headers,
+        mode:'cors'
+    }).then(res => res.json())
+    .then(res => {
+      if (res.success ){                                                        
+        data=res.data
+        plan_name=data
+        console.log(plan_name)
+      }
+    })
+    .catch(err=>{
+        console.log(err)
+    });
+
+    //Plans Sections.....
+    const free_plan_btn=document.getElementById("free_button")
+    const pro_plan_btn=document.getElementById("pro_button")
+    const ultimate_plan_btn=document.getElementById("ultimate_button")
+
+    const free_plan=document.getElementById("free_plan")
+    const upgraded_plan=document.getElementById("pro_plan")
+
+
+    if(plan_name=="free"){
+        upgraded_plan.disabled=true
+        free_plan.disabled=false
+        upgraded_plan.style.backgroundColor="rgb(130, 130, 130)"
+        free_plan.style.backgroundColor="transparent"
+
+        free_plan_btn.style.display="block";
+        pro_plan_btn.style.display="block";
+        pro_plan_btn.textContent='Upgrade Plan';
+        ultimate_plan_btn.textContent='Upgrade Plan';
+        free_plan_btn.textContent='Current Plan';
+        pro_plan_btn.onclick=function(){clicked2(50)};
+        ultimate_plan_btn.onclick=function(){clicked2(90)};
+    }else if(plan_name=="pro"){
+        free_plan.disabled=true
+        upgraded_plan.disabled=false
+        free_plan.style.backgroundColor="rgb(130, 130, 130)"
+        upgraded_plan.style.backgroundColor="transparent"
+
+        free_plan_btn.style.display="none";
+        pro_plan_btn.style.display="block";
+        ultimate_plan_btn.textContent='Upgrade Plan';
+        pro_plan_btn.textContent='Current Plan';
+        ultimate_plan_btn.onclick=function(){clicked2(90)};
+    }else if(plan_name=="ultimate"){
+        free_plan.disabled=true
+        upgraded_plan.disabled=false
+        free_plan.style.backgroundColor="rgb(130, 130, 130)"
+        upgraded_plan.style.backgroundColor="transparent"
+
+        free_plan_btn.style.display="none";
+        pro_plan_btn.style.display="none";
+        pro_plan_btn.textContent='Upgrade Plan';
+        ultimate_plan_btn.textContent='Current Plan';
+    }
+}
+
+async function fetchBillingInfo(){
+
+    await fetch(APIlink+"cart",{
+        method:'GET',
+        credentials: 'include' ,// allow cookie headers,
+        mode:'cors'
+    }).then(res => res.json())
+    .then(res => {
+      console.log(res)
+      if (res.success ){
+        data=res.data
+        for (let item of data){
+            let item_element= document.getElementsByName(item.substring(0,item.indexOf(":")))[0]
+            item_element.value=Number(item.substring(item.indexOf(":")+1))
+            chai_items[item.substring(0,item.indexOf(":"))]=item_element.value
+            count_qt(item_element,item.substring(0,item.indexOf(":")),item.substring(item.indexOf('_')+1,item.lastIndexOf('_')))
+        }
+      }
+    })
+    .catch(err=>{
+        console.log(err)
+    });
+}
 
 function assignfn(){
-    for(const key of chai_items.keys()){
-        const element=document.getElementsByName(`qt_chai_item${key+1}`)[0];
-        element.onkeyup=function() {count_qt(element,key,"chai")};
-        element.onchange=function() {count_qt(element,key,"chai")};
-        element.onkeydown=function() {count_qt(element,key,"chai")};
+    for(let key =1 ; key<=10;key ++){
+        const element=document.getElementsByName(`qt_chai_item${key}`)[0];
+        let dictkey=`qt_chai_item${key}`
+        element.onkeyup=function() {count_qt(element,dictkey,"chai")};
+        element.onchange=function() {count_qt(element,dictkey,"chai")};
+        element.onkeydown=function() {count_qt(element,dictkey,"chai")};
         }
-    for(const key of coffee_items.keys()){
-        const element=document.getElementsByName(`qt_coffee_item${key+1}`)[0];
-        element.onkeyup=function() {count_qt(element,key,"coffee")};
-        element.onchange=function() {count_qt(element,key,"coffee")};
-        element.onkeydown=function() {count_qt(element,key,"coffee")}; 
+    for(let key =1 ; key<=10;key ++){
+        const element=document.getElementsByName(`qt_coffee_item${key}`)[0];
+        let dictkey=`qt_coffee_item${key}`
+        element.onkeyup=function() {count_qt(element,dictkey,"coffee")};
+        element.onchange=function() {count_qt(element,dictkey,"coffee")};
+        element.onkeydown=function() {count_qt(element,dictkey,"coffee")}; 
        }
-    for(const key of Juice_items.keys()){
-        const element=document.getElementsByName(`qt_Juice_item${key+1}`)[0];
-        element.onkeyup=function() {count_qt(element,key,"Juice")};
-        element.onchange=function() {count_qt(element,key,"Juice")};
-        element.onkeydown=function() {count_qt(element,key,"Juice")};
+    for(let key =1 ; key<=10;key ++){
+        const element=document.getElementsByName(`qt_Juice_item${key}`)[0];
+        let dictkey=`qt_Juice_item${key}`
+        element.onkeyup=function() {count_qt(element,dictkey,"Juice")};
+        element.onchange=function() {count_qt(element,dictkey,"Juice")};
+        element.onkeydown=function() {count_qt(element,dictkey,"Juice")};
     }
 }
 
@@ -96,23 +248,21 @@ function count_qt(element,key,name){
     }
     else{
         if(name=="chai"){
-            chai_items[key][`qt_chai_item${key+1}`]=value;
+            chai_items[key]=value;
         }else if(name=="coffee"){
-            coffee_items[key][`qt_coffee_item${key+1}`]=value;
+            coffee_items[key]=value;
         }else if(name=="Juice"){
-            Juice_items[key][`qt_Juice_item${key+1}`]=value;
+            Juice_items[key]=value;
         }
         const parent=element.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
         coffee_ordered=false;chai_ordered=false;Juice_ordered=false;
-        for(var i=0;i<5;i++){
+        for(var i=1;i<=10;i++){
             
-            if(coffee_items.length>i){
-                if(coffee_items[i][`qt_coffee_item${i+1}`]>0)
-                    {coffee_ordered=true;}
-            }
-            if(chai_items[i][`qt_chai_item${i+1}`]>0)
+            if(coffee_items[`qt_coffee_item${i}`]>0)
+                {coffee_ordered=true;}
+            if(chai_items[`qt_chai_item${i}`]>0)
                     {chai_ordered=true;}
-            if(Juice_items[i][`qt_Juice_item${i+1}`]>0)
+            if(Juice_items[`qt_Juice_item${i}`]>0)
                     {Juice_ordered=true;}
             if(coffee_ordered && chai_ordered && Juice_ordered)
                 break;
@@ -133,7 +283,7 @@ function count_qt(element,key,name){
             }
         }
         else if(name=="Juice"){
-            if(coffee_ordered){
+            if(Juice_ordered){
                 parent.style['boxShadow']="green 0px 0px 4px 4px";
             }else{
                 parent.style['boxShadow']="#e6e4e4 0px 0px 4px 4px";
@@ -142,49 +292,6 @@ function count_qt(element,key,name){
     }
 }
 
-//Plans Sections.....
-const free_plan_btn=document.getElementById("free_button")
-const pro_plan_btn=document.getElementById("pro_button")
-const ultimate_plan_btn=document.getElementById("ultimate_button")
-
-const free_plan=document.getElementById("free_plan")
-const upgraded_plan=document.getElementById("pro_plan")
-
-if(plan_name=="free_plan"){
-    upgraded_plan.disabled=true
-    free_plan.disabled=false
-    upgraded_plan.style.backgroundColor="rgb(130, 130, 130)"
-    free_plan.style.backgroundColor="transparent"
-
-    free_plan_btn.style.display="block";
-    pro_plan_btn.style.display="block";
-    pro_plan_btn.textContent='Upgrade Plan';
-    ultimate_plan_btn.textContent='Upgrade Plan';
-    free_plan_btn.textContent='Current Plan';
-    pro_plan_btn.onclick=function(){clicked2(50)};
-    ultimate_plan_btn.onclick=function(){clicked2(90)};
-}else if(plan_name=="pro_plan"){
-    free_plan.disabled=true
-    upgraded_plan.disabled=false
-    free_plan.style.backgroundColor="rgb(130, 130, 130)"
-    upgraded_plan.style.backgroundColor="transparent"
-
-    free_plan_btn.style.display="none";
-    pro_plan_btn.style.display="block";
-    ultimate_plan_btn.textContent='Upgrade Plan';
-    pro_plan_btn.textContent='Current Plan';
-    ultimate_plan_btn.onclick=function(){clicked2(90)};
-}else if(plan_name=="ultimate_plan"){
-    free_plan.disabled=true
-    upgraded_plan.disabled=false
-    free_plan.style.backgroundColor="rgb(130, 130, 130)"
-    upgraded_plan.style.backgroundColor="transparent"
-
-    free_plan_btn.style.display="none";
-    pro_plan_btn.style.display="none";
-    pro_plan_btn.textContent='Upgrade Plan';
-    ultimate_plan_btn.textContent='Current Plan';
-}
 
 //Manage plans...
 const radio_today=document.getElementsByName("order_type1")[0]
@@ -210,7 +317,7 @@ days=[]
 
 for(var i =0;i<7;i++){
     dayslist[i].style.cursor="pointer"
-        console.log(dayslist[i].textContent,"l")
+        // console.log(dayslist[i].textContent,"l")
 
     dayslist[i].onclick=function(){
         console.log(this.textContent)
@@ -228,26 +335,27 @@ for(var i =0;i<7;i++){
 
 
 //Manage billings.....
-document.getElementById("btn_submit").onclick=function(){clicked2(0)}
+document.getElementById("btn_submit").onclick=function(){clicked2(0,"submit")}
+document.getElementById("btn_submit_cart").onclick=function(){clicked2(0,"cart")}
 
-function clicked2(amt){
+function clicked2(amt,btnName){
     total_bill+=amt
     if(chai_ordered)
     {
-        for(var i=0;i<5;i++){
-            total_bill+=chai_items[i][`qt_chai_item${i+1}`]
+        for(var i=1;i<=10;i++){
+            total_bill+=chai_items[`qt_chai_item${i}`]
         }
     }
     if(coffee_ordered)
     {
-        for(var i=0;i<3;i++){
-            total_bill+=coffee_items[i][`qt_coffee_item${i+1}`]
+        for(var i=1;i<=10;i++){
+            total_bill+=coffee_items[`qt_coffee_item${i}`]
         }
     }
     if(Juice_ordered)
     {
-        for(var i=0;i<5;i++){
-            total_bill+=Juice_items[i][`qt_Juice_item${i+1}`]
+        for(var i=1;i<=10;i++){
+            total_bill+=Juice_items[`qt_Juice_item${i}`]
         }
     }
     var no_of_days
@@ -260,10 +368,57 @@ function clicked2(amt){
     if(radio_week.checked)
         total_bill*=no_of_days;
     if(total_bill!=0)
-        window.open("payment.html","_self")
+        if(btnName=="submit"){
+            window.open("../html/payment.html","_self")
+        }
+        else    
+            {alert("Added to Cart")
+        addToCart()}
     else{
         alert("Please select atleast one item.")
     }
+}
+
+function addToCart(){
+    cart=[]
+    let y=0
+    for(let key =1 ; key<=10;key ++){
+        var element=document.getElementsByName(`qt_chai_item${key}`)[0];
+        if (element.value >0){
+            cart[y++]=`qt_chai_item${key}`+":"+element.value
+        }
+        element=document.getElementsByName(`qt_coffee_item${key}`)[0];
+        if (element.value >0){
+            cart[y++]=`qt_coffee_item${key}`+":"+element.value
+        }
+        element=document.getElementsByName(`qt_Juice_item${key}`)[0];
+        if (element.value >0){
+            cart[y++]=`qt_Juice_item${key}`+":"+element.value
+        }
+        }
+    console.log(cart)
+
+    fetch(APIlink+"cart",{
+        method:'PUT',
+        credentials: 'include' ,// allow cookie headers,
+        mode:'cors',
+        headers:{
+            'Accept':'*/*',
+            'Accept-Encoding':'gzip, deflate, br',
+            'Accept-Language':'en-US,en;q=0.9',
+            'Content-Type':'application/json',
+            },
+            body:JSON.stringify({
+                "username":username,
+                "cart":cart
+            })
+    }).then(res => res.json())
+    .then(res => {
+        console.log(res)
+    })
+    .catch(err=>{
+        console.log(err)
+    });
 }
 
 

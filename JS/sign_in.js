@@ -23,13 +23,17 @@ submit_btn.onclick= async function() {
             message_box.style.display="none"
             }, 2000);
         }else{
+
             console.log("Logging.."+user.value+","+password.value)
             await fetch(APIlink+"login",{
                 method:'POST',
+                credentials: 'include' ,// allow cookie headers,
+                mode:'cors',
                 headers:{
-                    'Accept':'application/json',
-                    'Content-Type':'application/json',
-                    'credentials': 'include'
+                'Accept':'*/*',
+                'Accept-Encoding':'gzip, deflate, br',
+                'Accept-Language':'en-US,en;q=0.9',
+                'Content-Type':'application/json',
                 },
                 body:JSON.stringify({
                     "username":String(user.value),
@@ -46,18 +50,6 @@ submit_btn.onclick= async function() {
                 console.log(err)
             });
 
-            // await fetch(APIlink+"auth/",{
-            //     method:'GET',
-            //     headers:{
-            //         'Accept':'application/json',
-            //         'Content-Type':'application/json'
-            //     }
-            // }).then(res => res.json())
-            // .then(res => {
-            //   console.log(res,"hhf")
-            // })
-            // .catch(err=>{
-            //     console.log(err)
-            // });
+            
         }
 }
