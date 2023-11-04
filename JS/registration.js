@@ -89,7 +89,7 @@ registration_btn.onclick=async function() {
     .then(res => {
       console.log(res)
       if (res.success){
-        window.location.href("./sign_in.html")
+        window.location.href=("./sign_in.html")
       }
       else{
         window.onbeforeunload = function() {
