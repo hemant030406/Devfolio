@@ -4,7 +4,7 @@ const password=document.getElementById("your_password")
 const message_box=document.getElementById("message");
 const submit_btn=document.getElementById("submit");
 
-const APIlink="http://localhost:5000/api/v1/user/"
+const APIlink="https://chaiwala-api.onrender.com/api/v1/user/"
 
 submit_btn.onclick= async function() {
         var isempty=false;
