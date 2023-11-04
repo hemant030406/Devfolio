@@ -1,6 +1,6 @@
 const AccountName=document.getElementById("userInfo")
 const logoutbtn=document.getElementById('logoutbtn')
-const APIlink="http://localhost:5000/api/v1/user/"
+const APIlink="https://chaiwala-api.onrender.com/api/v1/user/"
 
 const authenticate=async function(){
 

@@ -4,7 +4,7 @@ const infos=document.getElementsByClassName("answer_input")
 const registration_btn=document.getElementById("submit")
 const message_box=document.getElementById("message")
 
-const APIlink="http://localhost:5000/api/v1/user/"
+const APIlink="https://chaiwala-api.onrender.com/api/v1/user/"
 
 
 registration_btn.onclick=async function() {
@@ -89,7 +89,7 @@ registration_btn.onclick=async function() {
     .then(res => {
       console.log(res)
       if (res.success){
-        window.location.href("./sign_in.html")
+        window.location.href=("./sign_in.html")
       }
       else{
         window.onbeforeunload = function() {
